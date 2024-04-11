@@ -110,9 +110,23 @@ function revelar(id){
         contadorMovimientos++
         movimientos.innerHTML = `Movimientos: ${contadorMovimientos}`
 
-        // Falta agregar lo que va a pasar si el contenido de ambas es igual 
+        // Ver si ambas cartas son iguales o no
         if(primerValor === segundoValor){
-            console.log('son iguales');
+            cartasReveladas = 0
+            contadorAciertos++
+            aciertos.innerHTML = `Aciertos: ${contadorAciertos}`
+        }else{
+            setTimeout(() => {
+                carta1.innerHTML = ' '
+                carta2.innerHTML = ' '
+                carta1.disabled = false
+                carta2.disabled = false
+                carta1.classList.remove('mostrar')
+                carta2.classList.remove('mostrar')
+                cartasReveladas = 0
+            }, 700)
+            contadorErrores++
+            errores.innerHTML = `Errores: ${contadorErrores}`
         }
     }
 }

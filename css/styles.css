@@ -26,3 +26,15 @@ h1 {
     border-radius: 8px;
     margin: 0 auto;
 }
+
+.tablero {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.tablero button {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}

@@ -1,1 +1,1 @@
-# Proyectos equipo #5
+# Proyectos Equipo #5

@@ -1,3 +1,6 @@
+// variables
+let numeros = []
+
 // Crear contenedor del juego
 const contenedorJuego = document.createElement('div')
 contenedorJuego.classList.add('juego')
@@ -39,3 +42,31 @@ function generarEstadisticas(){
 }
 
 generarEstadisticas()
+
+// Generar los numeros
+for(let i=0; i<8; i++){
+    numeros.push(i)
+    numeros.push(i)
+}
+
+// Desordenar los numeros
+numeros = numeros.sort(()=>{
+    return Math.random()-0.5
+})
+
+console.log(numeros);
+
+// Generar tablero
+const tablero = document.createElement('div')
+tablero.classList.add('tablero')
+contenedorJuego.appendChild(tablero)
+generarBotones()
+
+// Generar los botones
+function generarBotones(){
+    for(let i=0; i<16; i++){
+        const botones = document.createElement('button')
+        botones.id = i
+        tablero.appendChild(botones)
+    }
+}

@@ -1,5 +1,16 @@
 // variables
 let numeros = []
+let cartasReveladas = 0
+let carta1
+let carta2
+let primerValor
+let segundoValor
+let contadorMovimientos = 0
+let contadorAciertos = 0
+let contadorErrores = 0
+let contadorTiempo = 0
+let temporizador = false
+let detenerTiempo
 
 // Crear contenedor del juego
 const contenedorJuego = document.createElement('div')
@@ -67,6 +78,51 @@ function generarBotones(){
     for(let i=0; i<16; i++){
         const botones = document.createElement('button')
         botones.id = i
+        botones.setAttribute('onclick', `revelar(${botones.id})`)
         tablero.appendChild(botones)
     }
+}
+
+function revelar(id){
+    // Iniciar a contar el tiempo
+    if(temporizador === false){
+        iniciarTiempo()
+        temporizador = true
+    }
+
+    cartasReveladas++
+
+    // Ver si ya se levantaron cartas
+    if(cartasReveladas === 1){
+        carta1 = document.getElementById(id)
+        primerValor = numeros[id]
+        carta1.innerHTML = primerValor
+        carta1.disabled = true
+        carta1.classList.add('mostrar')
+    }else if(cartasReveladas === 2){
+        carta2 = document.getElementById(id)
+        segundoValor = numeros[id]
+        carta2.innerHTML = segundoValor
+        carta2.disabled = true
+        carta2.classList.add('mostrar')
+
+        // Aumentar movimientos
+        contadorMovimientos++
+        movimientos.innerHTML = `Movimientos: ${contadorMovimientos}`
+
+        // Falta agregar lo que va a pasar si el contenido de ambas es igual 
+        if(primerValor === segundoValor){
+            console.log('son iguales');
+        }
+    }
+}
+
+function iniciarTiempo(){
+    detenerTiempo = setInterval(()=>{
+        contadorTiempo++
+        tiempo.innerHTML = `Tiempo: ${contadorTiempo} segundos`
+        if(contadorAciertos === 8){
+            clearInterval(detenerTiempo)
+        }
+    }, 1000)
 }

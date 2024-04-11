@@ -1,0 +1,21 @@
+.contenedor {
+    margin: 45px auto;
+    display: flex;
+}
+
+.estadisticas {
+    padding: 0 0 0 5px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.juego {
+    background-color: aliceblue;
+    padding: 0 10px 10px 10px;
+    border-radius: 8px;
+    margin: 0 auto;
+}

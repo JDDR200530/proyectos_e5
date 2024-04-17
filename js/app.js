@@ -11,6 +11,8 @@ let contadorErrores = 0
 let contadorTiempo = 0
 let temporizador = false
 let detenerTiempo
+let tamanio
+let dificultad = 1
 
 // Crear contenedor del juego
 const contenedorJuego = document.createElement('div')
@@ -54,10 +56,32 @@ function generarEstadisticas(){
 
 generarEstadisticas()
 
-// Generar los numeros
-for(let i=0; i<8; i++){
-    numeros.push(i)
-    numeros.push(i)
+// Para las dificultades 
+switch(dificultad){
+    case 1:
+        // 4 x 4
+        for(let i=0; i<8; i++){
+            numeros.push(i)
+            numeros.push(i)
+        }
+        tamanio = 'op4x4'
+        break
+    case 2:
+        // 4 x 6
+        for(let i=0; i<12; i++){
+            numeros.push(i)
+            numeros.push(i)
+        }
+        tamanio = 'op4x6'
+        break
+    case 3:
+        // 4 x 8
+        for(let i=0; i<16; i++){
+            numeros.push(i)
+            numeros.push(i)
+        }
+        tamanio = 'op4x8'
+        break
 }
 
 // Desordenar los numeros
@@ -67,15 +91,15 @@ numeros = numeros.sort(()=>{
 
 console.log(numeros);
 
-// Generar tablero
+// Generar tablero con su tamaño
 const tablero = document.createElement('div')
-tablero.classList.add('tablero')
+tablero.classList.add('tablero', tamanio)
 contenedorJuego.appendChild(tablero)
 generarBotones()
 
 // Generar los botones
 function generarBotones(){
-    for(let i=0; i<16; i++){
+    for(let i=0; i<numeros.length; i++){
         const botones = document.createElement('button')
         botones.id = i
         botones.setAttribute('onclick', `revelar(${botones.id})`)
@@ -110,9 +134,23 @@ function revelar(id){
         contadorMovimientos++
         movimientos.innerHTML = `Movimientos: ${contadorMovimientos}`
 
-        // Falta agregar lo que va a pasar si el contenido de ambas es igual 
+        // Ver si ambas cartas son iguales o no
         if(primerValor === segundoValor){
-            console.log('son iguales');
+            cartasReveladas = 0
+            contadorAciertos++
+            aciertos.innerHTML = `Aciertos: ${contadorAciertos}`
+        }else{
+            setTimeout(() => {
+                carta1.innerHTML = ' '
+                carta2.innerHTML = ' '
+                carta1.disabled = false
+                carta2.disabled = false
+                carta1.classList.remove('mostrar')
+                carta2.classList.remove('mostrar')
+                cartasReveladas = 0
+            }, 700)
+            contadorErrores++
+            errores.innerHTML = `Errores: ${contadorErrores}`
         }
     }
 }
@@ -121,7 +159,7 @@ function iniciarTiempo(){
     detenerTiempo = setInterval(()=>{
         contadorTiempo++
         tiempo.innerHTML = `Tiempo: ${contadorTiempo} segundos`
-        if(contadorAciertos === 8){
+        if(contadorAciertos === numeros.length/2){
             clearInterval(detenerTiempo)
         }
     }, 1000)

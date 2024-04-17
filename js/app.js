@@ -12,7 +12,7 @@ let contadorTiempo = 0
 let temporizador = false
 let detenerTiempo
 let tamanio
-let dificultad = 1
+let dificultad = 2
 
 // Crear contenedor del juego
 const contenedorJuego = document.createElement('div')

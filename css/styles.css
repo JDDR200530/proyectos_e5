@@ -1,0 +1,72 @@
+body {
+    font-family: 'poppins light';
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    color: white;
+}
+
+.contenedor {
+    margin: 45px auto;
+    display: flex;
+}
+
+.estadisticas {
+    padding: 0 0 0 5px;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.juego {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 0 10px 10px 10px;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+.tablero {
+    display: grid;
+    grid-gap: 5px;
+}
+
+.op4x4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.op4x6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.op4x8 {
+    grid-template-columns: repeat(8, 1fr);
+}   
+
+.tablero button {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+@keyframes mostrarCarta {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.mostrar {
+    animation: mostrarCarta 0.5s forwards;
+}

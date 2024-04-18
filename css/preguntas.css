@@ -1,5 +1,7 @@
 body {
-    font-family: 'poppins light';
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-style: normal;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
 }
@@ -47,5 +49,35 @@ h3 {
 }
 
 .respuesta:hover {
+    background-color: #0A619C;
+}
+
+.mensaje-final {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.mensaje-final h2 {
+    font-size: 24px;
+    color: #fff;
+}
+
+.mensaje-final p {
+    font-size: 18px;
+    color: #fff;
+}
+
+.btn-reiniciar {
+    padding: 10px 20px;
+    background-color: #2E86C1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reiniciar:hover {
     background-color: #0A619C;
 }

@@ -4,6 +4,8 @@ const inputRegistro = document.getElementById('txtRegistro')
 const btnRegistro = document.getElementById('btnRegistro')
 let perfiles = JSON.parse(localStorage.getItem('perfiles')) || [];
 
+inputRegistro.setAttribute('autocomplete', 'off')
+
 inputRegistro.addEventListener('focus', e => {
     if (inputRegistro.value === 'Nombre del perfil') {
         inputRegistro.value = '';

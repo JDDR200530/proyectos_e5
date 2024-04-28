@@ -1,0 +1,86 @@
+body {
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-style: normal;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* color: #fff; */
+}
+
+.contenedor {
+    text-align: center;
+}
+
+.selector-dificultad label {
+    color: #fff;
+    font-size: 18px;
+}
+
+.selector-dificultad select {
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+}
+
+.selector-dificultad select:focus {
+    outline: none;
+}
+
+.selector-dificultad select:hover{
+    cursor: pointer;
+}
+
+.opciones button {
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px auto;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+h1, h2 {
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 8px 20px;
+    color: white;
+}
+
+th {
+    background-color: #2E86C1;
+}
+
+.btn-reiniciar {
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px;
+    background-color: #2E86C1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.btn-reiniciar:hover {
+    background-color: #0A619C;
+}
+

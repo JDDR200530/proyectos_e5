@@ -72,3 +72,42 @@ button:hover {
 .mostrar {
     animation: mostrarCarta 0.5s forwards;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 8px;
+}
+
+th {
+    background-color: #2E86C1;
+}
+
+.contenedor-derrota {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.btn-reiniciar {
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px;
+    background-color: #2E86C1;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.btn-reiniciar:hover {
+    background-color: #0A619C;
+}
+

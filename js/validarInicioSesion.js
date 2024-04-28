@@ -3,6 +3,7 @@
 const txtInicioSesion = document.getElementById('txtInicioSesion')
 const btnInicioSesion = document.getElementById('btnInicioSesion')
 let perfiles = JSON.parse(localStorage.getItem('perfiles')) || [];
+let perfilActivo = localStorage.getItem('perfilActivo');
 
 txtInicioSesion.setAttribute('autocomplete', 'off')
 
@@ -33,6 +34,7 @@ btnInicioSesion.addEventListener('click', e => {
         return
     }
     
+    localStorage.setItem('perfilActivo', inicioPerfil);
     window.location.href = 'juegos.html'
     txtInicioSesion.value = 'Nombre del perfil';
 })

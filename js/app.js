@@ -275,6 +275,9 @@ if (!perfilActivo) {
                 cartasEncontradas[perfilActivo].push(primerValor);
                 cartasEncontradas[perfilActivo].push(segundoValor);
                 localStorage.setItem('cartasEncontradas', JSON.stringify(cartasEncontradas));
+                const sondioAcierto = document.createElement('audio')
+                sondioAcierto.src = '/recursos/mp3/correcto.mp3'
+                sondioAcierto.play()
             } else {
                 setTimeout(() => {
                     carta1.innerHTML = ' ';
@@ -287,6 +290,9 @@ if (!perfilActivo) {
                 }, 700);
                 contadorErrores++;
                 errores.innerHTML = `Errores: ${contadorErrores}`;
+                const sonidoError = document.createElement('audio')
+                sonidoError.src = '/recursos/mp3/error.mp3'
+                sonidoError.play()
             }
         }
     }

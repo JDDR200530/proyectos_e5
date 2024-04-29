@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú de juego de memoria</title>
+    <title>Menú de juego de preguntas</title>
     <link rel="stylesheet" href="css/menuMemorama.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,16 +11,14 @@
 </head>
 <body>
     <div class="contenedor">
-        <h1>Juego de memoria</h1>
+        <h1>Juego de preguntas</h1>
         <div class="opciones">
-            <button id="btnJugar">Nuevo juego</button>
-            <button id="btnReanudar">Reanudar</button>
+            <button id="btnJugar">Jugar</button>
             <div class="selector-dificultad">
                 <label for="">Dificultad:</label>
                 <select id="dificultad">
-                    <option value="facil">Fácil</option>
-                    <option value="medio">Medio</option>
-                    <option value="dificil">Difícil</option>
+                    <option value="normal">Normal</option>
+                    <option value="contraReloj">Contra reloj</option>
                 </select>
             </div>
             <button id="btnEstadisticas">Estadisticas</button>
@@ -28,6 +26,6 @@
             <button id="btnVolver">Volver</button>
         </div>
     </div>
-    <script src="js/menuMemorama.js"></script>
+    <script src="js/menuPreguntas.js"></script>
 </body>
 </html>
